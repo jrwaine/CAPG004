@@ -1,0 +1,18 @@
+2) Para a OTP assíncrona, o texto não é em sua maioria alterado conforme a retirada de letras, apenas a parte em que a letra foi retirada. Isso porque a cifra é baseada na letra cifrada, logo a retirada de uma letra afeta o algoritmo localmente apenas. 
+Já para OTP síncrona, a cifra depende do conjunto das letras, visto que a semente de cada letra depende de sua posição no texto. Portanto a retirada de uma letra impacta a cifra de todas letras seguintes no texto. Porém, caso seja conhecido o número de letras retiradas e aonde, é possível retornar a maior parte do texto, como na OTP assícrona.
+
+3) Supondo que a saída de um texto cifrado para uma dada chave faça sentido, como CYRPE se torne TENTA para uma dada chave. Ainda assim não é possível afirmar que essa chave é a correta, pois há infinitas possibilidades de outras chaves que formam palavras que "fazem sentido" e não é possível dizer qual delas está correta. Ou seja, não é possível validar que a chave escolhida é a correta, mesmo que a reposta "faça sentido".
+
+4) XOR = + 
+   m = c3+b = (c2+a)+b = ((c1+b)+a)+b = (((m+a)+b)+a)+b = m
+   O algoritmo está certo!
+   Caso c1, c2 e c3 sejam interceptados:
+   c3+c1+c2 = c2+(c2+a)+(m+a) = (c2+c2)+(a+a)+m = m
+  Portanto o protocolo não é seguro, pois ao fazer o XOR das três mensagens interceptadas, se obtém a mensagem original.
+
+5) c) 
+   p1 e p2: k1+k1*=k
+   p1 e p3: k2+k2*=k
+   p2 e p3: k2+k2*=k
+   Como cada pessoa tem chaves de pares diferentes (k1 e k2), não é possível decifrarem sozinhas a chave.
+
