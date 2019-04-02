@@ -1,0 +1,27 @@
+2) 
+Para isso, na solução trivial temos que j=i para todo i no segundo loop do KSA
+(j + S[i] + K[i%M])%N = i
+Para i = 0, a condição de contorno K[0] = k*N satisfaz
+Considerando que S[i] não é alterado, podemos fazer S[i] = i
+(j + i + K[i%M])%N = i
+j + i + K[i%M] = i + k*N
+Também temos que j = i-1, visto que j possui o valor da última iteração
+i - 1 + K[i%M] = k*N
+K[i%M] = k*N - i + 1
+
+Portanto temos a condição de contorno K[0] = N
+E K[1...N-1] = N - i + 1, escolhendo k=1 para ambos casos
+
+3)
+Visto que o KSA produz um estado a cada iteração no segundo loop, ele pode produzir até 256 estados diferentes. Já que o número de iterações é igual a N (256 nesse caso)
+
+4)
+Caso não seja utilizado um IV, a chave utilizada para criptografar o pacote de dados é sempre a mesma. Assim a partir do 'xor' entre dois pacotes que foram criptografados pela mesma rede, a chave "some" e resta o 'xor' entre os dois pacotes descriptografados. Isso faz com que a descoberta dos significados dos pacotes seja muito mais fácil, a partir da análise deles e de outros pacotes da rede.
+
+5)
+O ataque pode ser feito por meio do teste exaustivo de chave, fazendo todas combinações de 40 bits possíveis para o WEP 64. Para o WEP 128 esse tipo de ataque já não é tão viável, pois exige cerca de 10^(18) de combinações a mais.
+Outro tipo de ataque é fazer a observação dos pacotes da rede até que o IV se repita, assim é feito o mesmo ataque referenciado no exercício anterior, em que a chave "desaparece" e restam o 'xor' entre os pacotes descriptografados.
+
+6)
+Os ransonwares utilizam usualmente um RC4 para criptografar os dados de um arquivo. Um dos métodos é colocar no início do arquivo a chave criptografada e em sequência o conteúdo do arquivo criptografado, como o BitPaymer faz. Outros exemplos são o WannCrypt (ou WannaCry) e o CryptoWall
+
