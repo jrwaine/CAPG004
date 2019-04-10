@@ -1,0 +1,32 @@
+1) Sua não linearidade com relação às saídas que produz, devido às matrizes S.
+
+2) e: 0110 0101  
+   e(encriptado com 473): 0001 0100 - alterados 4 bits
+   e(encriptado com 472): 1111 1101 - alterados 3 bits
+
+3) A chave utilizada foi 912
+
+4) Caso sejam consideradas chaves diferentes durante a cifragem, o total de combinações a testar é de (2^10)^3=2^30, o que tomaria um tempo considerável de processamento. Ainda assim é possível fazer um ataque por força bruta, mas gastando muito mais tempo.
+
+5) Para a arma é muito fácil perceber na imagem criptografada que se trata de uma arma, já para lena não é possível fazer inferências apenas com a imagem criptografada. A partir do uso do CBC (Cipher Block Chain) é possível perceber um padrão no início da imagem da arma, devido a repetição de textos cifrados após alguns pixels. Porém não é possível saber qual o conteúdo da imagem original a partir desses padrões, nem a partir da imagem cifrada como um todo.
+
+6)
+As armas e os barões assinalados 
+Que, da Ocidental praia Lusitana, 
+Por mares nunca de antes navegados 
+Passaram ainda além da Taprobana 
+E em perigos e guerras esforçados 
+Mais do que prometia a força humana, 
+E entre gente remota edificaram 
+Novo Reino, que tanto sublimaram; 
+  
+E também as memórias gloriosas 
+Daqueles Reis que foram dilatando 
+A Fé, o Império, e as terras viciosas 
+De África e de Ásia andaram devastando, 
+E aqueles que por obras valerosas 
+Se vão da lei da Morte libertando: 
+Cantando espalharei por toda parte, 
+Se a tanto me ajudar o engenho e arte. 
+
+Trecho de Os Lusíadas - Camões
