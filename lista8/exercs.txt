@@ -1,0 +1,17 @@
+1. a)
+    k_pub=(7,143), k_prv=(103,143), msg_cypher=48
+
+    b)
+    k_pub=(5,133), k_prv=(65,133), msg_cypher=62
+
+    c)
+    k_pub=(7,187), k_prv=(23,187), msg_cypher=11
+
+2)
+    O valor correto é e=49, pois é o único que produz o algoritmo de Euclides estendido igual a um. A chave privada é (49, 697).
+
+3)
+    O texto em claro é 1088, a chave privada é (191, 2623)
+
+4)
+    O texto em claro é 666, a chave privada é (3790721, 6326693) 

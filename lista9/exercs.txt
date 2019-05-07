@@ -1,0 +1,8 @@
+2)
+    a) É válido
+    b) Não é válido
+    c) É válido
+
+3) Primeiro Alice deve criptografar sua mensagem com a chave pública de Bob (eB, nB). Então faz a assinatura dessa mensagem a partir de uma chave privada sua (dA, nA). Depois envia a mensagem criptografada e assinada e a assinatura para Bob. Bob deve primeiro checar a assinatura da mensagem, por meio da chave pública de Alice (eA, nA) e, após a certificação da autoria da mensagem, descriptografar a assinatura da mensagem, como anteriormente, e então descriptografá-la com sua chave privada (dB, nB).
+
+4) O texto plano para Bob é 1507.

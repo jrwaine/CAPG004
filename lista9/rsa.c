@@ -61,51 +61,25 @@ int main () {
                             // public key: (e, n)
     
     ulong msg_plain, msg_crypt, msg_dcrypt;
-    msg_plain = 181;
-
-    p = 41; q = 17; e = 5;
+    ulong assin_x, assin_xl;
     
-    descobre_primos(6326693, &p, &q);
+    ulong crypt_assin_A, crypt_A, A;
     
-    a = 0; b = 0;
-    //printf("Completar parte de geração de chaves!\n");
+    crypt_assin_A = 51859;
     
-    n = p*q;
-    phi_n = (p-1)*(q-1);
+    // public Alice
+    n = 127273;
+    e = 14641;
+
+    crypt_A = sq_mult(crypt_assin_A, e, n);
     
-    /*
-    for(e = 2; e < phi_n; e++)
-    {
-        if(euclides_estendido(phi_n, e, &a, &b) == 1)
-            break;
-    }
-    */
-
-    if(euclides_estendido(phi_n, e, &a, &b) != 1)
-    {
-        printf("Invalid e!\n");
-        return -1;
-    }
-
-    while(b < 0)
-        b += phi_n;
-
-    d = b % phi_n;
+    // private Bob
+    n = 135379;
+    d = 57251;
     
+    A = sq_mult(crypt_A, d, n);
 
-    
-    /*Cifrar*/
-    //printf("Faça um teste para cifrar com RSA!\n");
-    msg_crypt = sq_mult(msg_plain, e, n);
-    msg_crypt = 1632643;
-
-    /*Decifrar*/
-    //printf("Faça um teste para decifrar com RSA!\n");
-    msg_dcrypt = sq_mult(msg_crypt, d, n);
-    
-
-    printf("n: %lld\npriv. key: %lld\npubl. key: %lld\n", n, d, e);
-    printf("msg. plain: %lld\nmsg. crypt: %lld\nmsg. dcrypt: %lld\n", msg_plain, msg_crypt, msg_dcrypt);
+    printf("crypt_assin_A: %lld\ncrypt_A: %lld\nA: %lld\n", crypt_assin_A, crypt_A, A);
 
     return 0;
 }
